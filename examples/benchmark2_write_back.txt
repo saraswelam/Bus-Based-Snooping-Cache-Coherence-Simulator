@@ -1,0 +1,12 @@
+# Benchmark 2: three processors and two variables
+PROTOCOL: WRITE_INVALIDATE_WRITE_BACK
+MEMORY: X=10, Z=80
+PROCESSORS: P1, P2, P3
+P1: Read(X)
+P2: Read(X)
+P3: Read(X)
+P1: Write(X, 35)
+P1: Read(Z)
+P2: Read(X)
+P3: Write(X, 15)
+P1: Write(Z, 81)

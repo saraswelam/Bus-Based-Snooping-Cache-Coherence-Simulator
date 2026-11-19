@@ -1,0 +1,11 @@
+# Benchmark 1: textbook two-processor, one-variable stream
+PROTOCOL: WRITE_INVALIDATE_WRITE_THROUGH
+MEMORY: X=5
+PROCESSORS: P, Q
+P: Read(X)
+Q: Read(X)
+Q: Write(X, 10)
+Q: Read(X)
+Q: Write(X, 15)
+P: Write(X, 20)
+Q: Read(X)
